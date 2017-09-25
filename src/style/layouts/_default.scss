@@ -1,0 +1,14 @@
+.main { max-width: 1024px; margin: 0 auto; }
+
+#main { display: flex; flex-direction: row-reverse; flex-wrap: wrap;
+  > .sidebar { flex: 1 1 auto; width: 300px; padding: 24px; box-sizing: border-box;
+    aside { border: 1px solid #ddd; border-radius: 3px; padding: 24px; box-sizing: border-box;
+      &.flat { border: none; padding: 0 0 12px 0; }
+      nav > ul { margin: 0; padding: 0; list-style-type: none; line-height: 150%; }
+    }
+  }
+  > .content { flex: 1 1 auto; width: 400px; padding: 24px;
+    p { margin: 0 0 12px 0;
+    }
+  }
+}

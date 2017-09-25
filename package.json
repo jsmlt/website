@@ -1,0 +1,54 @@
+{
+  "name": "@jsmlt/website",
+  "version": "0.1.0",
+  "description": "Source code of JSMLT website.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack --watch --progress --colors",
+    "build": "webpack -p",
+    "dev-server": "webpack-dev-server --content-base ./ --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsmlt/website.git"
+  },
+  "author": "Jesper van Engelen <contact@jepps.nl> (https://jespervanengelen.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsmlt/website/issues"
+  },
+  "homepage": "https://github.com/jsmlt/website#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-react": "^7.3.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.6",
+    "write-file-webpack-plugin": "^4.1.0"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-icons": "^2.2.5",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "uuid": "^3.1.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}

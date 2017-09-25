@@ -1,0 +1,13 @@
+#page > header { width: 100%; height: 64px; background: #0c191e; color: #fff; font-size: 16px;
+  a { color: #c9cdcf; font-weight: bold; text-decoration: none;
+    &:hover { color: #fff; }
+    &.active { color: #fff; }
+  }
+
+  ul { margin: 0; padding: 0 12px; line-height: 64px; vertical-align: middle;
+    a { display: block; height: 64px; padding: 0 12px; }
+  }
+
+  .left { float: left; }
+  .right { float: right; }
+}
