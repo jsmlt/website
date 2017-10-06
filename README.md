@@ -1,1 +1,1 @@
-JSMLT website. For more information about JSMLT, check out the [JSMLT](/jsmlt/jsmlt) and [VisualML](/jsmlt/visualml) project pages.
+Source code of JSMLT website ([VisualML.io](http://visualml.io)). For more information about JSMLT, check out the [JSMLT](https://github.com/jsmlt/jsmlt) and [VisualML](https://github.com/jsmlt/visualml) project pages.
