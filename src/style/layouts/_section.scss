@@ -13,4 +13,10 @@
       canvas { position: absolute; }
     }
   }
+
+  @media all and (max-width: 768px) {
+    &.with-sidebar { flex-direction: column;
+      > .main { min-height: 70vw; }
+    }
+  }
 }
