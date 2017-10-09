@@ -1,82 +1,88 @@
 // Standard imports
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 // Local imports
 import Header from '../../modules/header';
+import SyntaxHighlighter from '../../components/syntax-highlighter';
+import imageScreenshot from '../../static/images/screenshot.png';
 
 class Home extends Component {
   render() {
+    const codeStrings = {
+      install: 'npm install @jsmlt/jsmlt',
+      basicExample: `// Import JSMLT library
+var jsmlt = require('@jsmlt/jsmlt');
+
+// Training data
+train_X = [[-1,-1], [-1,1], [1,1], [1,-1]];
+train_y = [0, 0, 1, 1];
+
+// Testing data
+test_X = [[1,2], [1,-2], [-1,-2], [-1,2]];
+
+// Create and train classifier
+var clf = new jsmlt.Supervised.SVM.SVM({
+  kernel: new jsmlt.Kernel.Linear(),
+});
+clf.train(train_X, train_y);
+
+// Make predictions on test data
+console.log(clf.predict(test_X));`,
+    };
+
     return (
       <div id="page">
         <Header />
-        <div id="main" className="main">
-          <div className="sidebar">
-            <aside className="flat">
-              <a className="github-button" href="https://github.com/jsmlt/jsmlt" data-icon="octicon-star" data-show-count="true" aria-label="Star jsmlt/jsmlt on GitHub">Star</a>
-            </aside>
-            <aside>
-              <nav>
-                <ul>
-                  <li><a href="#Introduction">Introduction</a></li>
-                  <li>
-                    <a href="#VisualML">VisualML</a>
-                    <ul>
-                      <li><a href="#VisualML_Installation">Installation</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#JSMLT">JSMLT</a>
-                    <ul>
-                      <li><a href="#JSMLT_Installation">Installation</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </aside>
-          </div>
-          <div className="content">
-            <section className="section" id="Introduction">
-              <p className="banner">
-                Get started right away by running VisualML straight from your browser!
-                <a href="/app/" className="button" target="_blank">Run VisualML!</a>
-              </p>
-
-              <p>JSMLT is a machine learning library for JavaScript, which includes an interactive
-              visualization toolkit called VisualML. It is primarily intended for use in educational
-              settings, where it can be used as an interactive tool for understanding machine
-              learning algorithms. The entire project is entirely open-source and available through <a href="https://github.com/jsmlt" target="_blank">
-              GitHub</a> and <a href="https://www.npmjs.com/org/jsmlt" target="_blank">NPM</a>.</p>
-
-              <div className="image">
-                <img src="assets/images/screenshot.png" alt="VisualML screenshot" />
-                <span className="caption">VisualML is a visualization toolkit that
-                runs <a href="/app/" target="_blank">right in your browser</a>.</span>
+        <div id="main">
+          <section className="section">
+            <div className="main-content grid grid-2">
+              <div>
+                <h1>The Machine Learning Toolkit for JavaScript</h1>
+                <p>
+                  JSMLT. An open-source, easy-to-use machine learning library. Programmed entirely
+                  in JavaScript. We've got supervised learning, right inside your browser! And
+                  what's even better: we've got interactive, 2-dimensional visualizations of all
+                  classical machine learning algorithms, ready for use — why not take it for a spin
+                  straight away?
+                </p>
+                <div>
+                  <Link
+                    className="button big button-cta"
+                    to="/demos/svm"
+                  >
+                    Try the JSMLT interactive demo
+                  </Link>
+                </div>
               </div>
-            </section>
-            <section className="section" id="VisualML">
-              <h2>VisualML</h2>
-              <p>VisualML is a web-based application that visualizes machine learning algorithms
-              implemented in JSMLT. It was built on <a href="https://facebook.github.io/react/" target="_blank">React</a>.
-              It features a simple, two-dimensional grid, where you can add data points and run different
-              machine learning algorithms on the input data. The tool exposes the algorithms'
-              hyperparameters, and dynamically updates the resulting classification on the grid.</p>
-
-              <h3 id="VisualML_Installation">Installation</h3>
-              <p>VisualML can be installed on your local machine by following the <a href="https://github.com/jsmlt/visualml#installation" target="_blank">
-              installation instructions on GitHub.</a></p>
-            </section>
-            <section className="section" id="JSMLT">
-              <h2>JSMLT</h2>
-              <p>JSMLT is the underlying machine learning toolkit used for VisualML, built in plain
-              JavaScript. The entire library is extensively documented, as such allowing your
-              students (or yourself) to get a grasp of the inner workings of the implemented
-              algorithms.</p>
-
-              <h3 id="JSMLT_Installation">Installation</h3>
-              <p>JSMLT can be installed on your local machine by following the <a href="https://github.com/jsmlt/jsmlt#installation" target="_blank">
-              installation instructions on GitHub.</a></p>
-            </section>
-          </div>
+              <div>
+                <div className="window">
+                  <img src={imageScreenshot} alt="VisualML screenshot" />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="section section-alt">
+            <div className="main-content">
+              <h1>Getting started</h1>
+              <p>
+                Installing JSMLT is really, really easy! It's available on <a href="https://npmjs.com/package/@jsmlt/jsmlt" title="JSMLT on npm">npm</a>, so to use it in your project you only have to run:
+              </p>
+              <SyntaxHighlighter language='bash'>{codeStrings.install}</SyntaxHighlighter>
+              <h2>A simple classifier</h2>
+              <p>
+                Now that JSMLT is installed, you're ready to run your first machine learning
+                scenario! In this example, we'll train a linear SVM on some dummy data, and make
+                some predictions! All in all, we just need a few lines of code for this:
+              </p>
+              <SyntaxHighlighter language='javascript'>{codeStrings.basicExample}</SyntaxHighlighter>
+              Running this code will output the predictions for our 4 test data points:
+              <SyntaxHighlighter language='bash'>[ 1, 1, 0, 0 ]</SyntaxHighlighter>
+              <p>
+                The entire npm package for running this code is available in the <a href="https://github.com/jsmlt/examples/tree/master/01-getting-started" title="JSMLT Example 1: Getting Started">JSMLT examples repository</a>. Clone it & run it!
+              </p>
+            </div>
+          </section>
         </div>
       </div>
     );

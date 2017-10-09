@@ -16,6 +16,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: '/build',
   },
   devServer: {
     port: 3000,
@@ -46,6 +47,10 @@ module.exports = {
           fallback: "style-loader",
           use: "css-loader",
         }),
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'file-loader?name=/images/[name].[ext]',
       }
     ],
   },
@@ -58,4 +63,10 @@ module.exports = {
       allChunks: true
     })
   ],
+  node: {
+    console: false,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
 }

@@ -1,16 +1,22 @@
-// Mixins
-@import 'mixins/buttons';
-
-// General
-@import 'general';
-
-// Components
-@import 'components/header';
-@import 'components/section';
+// Settings
+@import 'settings';
 
 // Modules
-@import 'modules/icons';
-@import 'modules/lists';
+@import 'modules/navbar';
+@import 'modules/window';
+@import 'modules/grid';
+@import 'modules/button';
+
+// Base style
+@import 'base';
+
+// Forms
+@import 'forms';
 
 // Layouts
-@import 'layouts/default';
+@import 'layouts/base';
+@import 'layouts/header';
+@import 'layouts/section';
+
+// Pages
+@import 'pages/with-canvas';

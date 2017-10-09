@@ -1,0 +1,27 @@
+@mixin grid($cols) { display: flex; flex-wrap: wrap; list-style-type: none;
+  > * { flex: 0 0 auto;
+    @if $cols == 2 { width: 47.5%; margin: 0 5% 0 0;
+      &:nth-child(2n) { margin: 0; }
+    } @elseif $cols == 3 {
+      margin: 0 3% 3% 0; width: 30.3%; 
+    } @elseif $cols == 4 {
+      margin: 0 2% 2% 0; width: 23%;
+    }
+
+    @media all and (max-width: 768px) {
+      @if $cols == 2 {
+        margin: 0 0 5% 0; width: 100%; 
+      } @elseif $cols == 3 {
+        margin: 0 3 3% 0; width: 100%; 
+      } @elseif $cols == 4 {
+        margin: 0 5% 5% 0; width: 45%;
+      }
+    }
+
+    @media all and (max-width: 600px) {
+      @if $cols == 4 {
+        margin: 0 0 5% 0; width: 100%;
+      }
+    }
+  }
+}

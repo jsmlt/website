@@ -1,0 +1,15 @@
+body { font-family: $primary-font; margin: 0; padding: 0; color: $text-color;
+  h1 { font-size: 1.5em; font-weight: 500; }
+  h2 { font-size: 1.35em; font-weight: 400; }
+  h3 { font-size: 1.2em; font-weight: 400; }
+  p { font-family: $primary-font; line-height: 1.5em; }
+}
+
+img { max-width: 100%; }
+
+a { color: $primary-color; text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+// Miscellaneous
+.clear:after { display: block; content: ''; clear: both; }

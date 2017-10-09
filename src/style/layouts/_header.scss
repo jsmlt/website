@@ -1,0 +1,21 @@
+#header { position: relative; width: 100%; font-weight: 300; font-size: 15px; border-bottom: 1px solid #eaeaea;
+  #logo { float: left; padding-right: 1em;
+    img { display: block; height: 32px; padding-top: 8px; }
+  }
+
+  a { color: $color-lightgray;
+    &:hover,
+    &.active { color: $text-color; text-decoration: none; }
+    &.expanded { font-weight: 500;
+      &:after { position: absolute; content: '\2022'; color: #aaa; text-align: center; bottom: -14px; width: 100%; display: block; left: 0; }
+    }
+  }
+
+  .iconized svg { margin-top: -4px; }
+
+  .primary { height: 48px; line-height: 48px; vertical-align: middle; }
+  .secondary { height: 48px; border-top: 1px solid #eaeaea; line-height: 48px; vertical-align: middle; background: #fafafa; }
+  
+  .left { float: left; }
+  .right { float: right; }
+}

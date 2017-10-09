@@ -1,0 +1,5 @@
+.with-canvas#page { min-height: 100vh; display: flex; flex-direction: column;
+  #main { display: flex; flex: 1 1 auto;
+    > .section.with-sidebar { flex: 1 1 auto; }
+  }
+}
