@@ -46,7 +46,9 @@ class Header extends Component {
                     className={this.state.activeSubMenu === 'demos' ? 'expanded' : ''}
                   >Demos</a>
                 </li>
-                <li><NavLink to="/docs" activeClassName="active">Documentation</NavLink></li>
+                <li>
+                  <a href="/jsmlt/docs" target="_blank">Documentation</a>
+                </li>
               </ul>
             </nav>
             <div className="navbar social right">
