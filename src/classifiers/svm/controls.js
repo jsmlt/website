@@ -197,7 +197,7 @@ export default class Controls extends Component {
         </fieldset>
         <ControlsC
           C={this.props.C}
-          onChangeC={x => this.onChangeC(x)}
+          onChange={x => this.handleChangeC(x)}
         />
         {kernel === 'gaussian' &&
           <ControlsSigmaSquared
