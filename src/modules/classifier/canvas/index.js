@@ -108,6 +108,10 @@ class Canvas extends Component {
   }
 
   render() {
+    if (this.canvas) {
+      this.canvasClassify(this.canvas, this.dataset);
+    }
+
     return (
       <div>
         <div
