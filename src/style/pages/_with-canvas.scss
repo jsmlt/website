@@ -1,8 +1,9 @@
 .with-canvas#page { min-height: 100vh; display: flex; flex-direction: column;
   #main { display: flex; flex: 1 1 auto;
     > .section.with-sidebar { flex: 1 1 auto;
-      .overlay { position: absolute; width: 100%; height: 100%; background: rgba(245,245,245,0.5); z-index: 1000; text-align: center; padding: 10%; box-sizing: border-box;
+      .overlay { position: absolute; width: 100%; height: 100%; pointer-events: none; background: rgba(245,245,245,0.5); z-index: 1000; text-align: center; padding: 10%; box-sizing: border-box; transition: opacity 500ms;
         > * { position: relative; top: 50%; transform: translateY(-50%); display: inline-block; color: #aaa; font-weight: 500; font-size: 2em; line-height: 2em; }
+        &.hide { opacity: 0; }
       }
     }
   }

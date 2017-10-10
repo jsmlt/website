@@ -7,6 +7,14 @@ import jsmlt from '@jsmlt/jsmlt';
 import Classifiers from '../../../classifiers';
 
 class Canvas extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showOverlay: true,
+    };
+  }
+
   getGridCoordinates() {
     // x1, y1, x2, y2
     return [-5, -5, 5, 5];
@@ -42,6 +50,11 @@ class Canvas extends Component {
       if (this.props.autorunEnabled) {
         this.canvasClassify(this.canvas, this.dataset);
       }
+
+      this.setState(prevState => ({
+        ...prevState,
+        showOverlay: false,
+      }));
     });
   }
 
@@ -84,7 +97,10 @@ class Canvas extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (nextProps.autorunEnabled || nextProps.runStatus !== this.props.runStatus) {
+    if (nextProps.autorunEnabled
+        || nextProps.runStatus !== this.props.runStatus
+        || nextState.showOverlay !== this.state.showOverlay
+    ) {
       return true;
     }
 
@@ -92,12 +108,17 @@ class Canvas extends Component {
   }
 
   render() {
-    if (this.canvas) {
-      this.canvasClassify(this.canvas, this.dataset);
-    }
-
     return (
-      <canvas ref="canvas"></canvas>
+      <div>
+        <div
+          className={`overlay ${!this.state.showOverlay && 'hide'}`}
+        >
+          <div>
+            Click to add a data point. Change the class of new data points in the sidebar.
+          </div>
+        </div>
+        <canvas ref="canvas"></canvas>
+      </div>
     );
   }
 }

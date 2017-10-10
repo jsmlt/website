@@ -16,7 +16,6 @@ export default class Classifier extends Component {
       autorunEnabled: true,
       classifierControls: Classifiers[props.classifierType].getDefaultControls(),
       runStatus: '',
-      showOverlay: true,
     };
   }
 
@@ -51,24 +50,10 @@ export default class Classifier extends Component {
     }));
   }
 
-  handleClickOverlay() {
-    this.setState(prevState => ({
-      ...prevState,
-      showOverlay: false,
-    }));
-  }
-
   render() {
     return (
       <div className={this.props.className}>
         <div className={this.props.classifierClassName}>
-          {this.state.showOverlay &&
-            <div className="overlay" onClick={() => this.handleClickOverlay()}>
-              <div>
-                Click to add a data point. Change the class of new data points in the sidebar.
-              </div>
-            </div>
-          }
           <Canvas
             autorunEnabled={this.state.autorunEnabled}
             classifierControls={this.state.classifierControls}
