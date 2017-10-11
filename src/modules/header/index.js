@@ -13,8 +13,12 @@ class Header extends Component {
 
     let activeSubMenu = '';
 
-    if (/^\/demos\/.*$/.test(this.props.history.location.pathname)) {
-      activeSubMenu = 'demos';
+    if (/^\/demos\/classification\/.*$/.test(this.props.history.location.pathname)) {
+      activeSubMenu = 'demos-classification';
+    }
+
+    if (/^\/demos\/clustering\/.*$/.test(this.props.history.location.pathname)) {
+      activeSubMenu = 'demos-clustering';
     }
 
     // Initialize state
@@ -42,9 +46,9 @@ class Header extends Component {
                 <li>
                   <a
                     href="#"
-                    onClick={e => this.handleClickExpandableMenuItem('demos', e)}
-                    className={this.state.activeSubMenu === 'demos' ? 'expanded' : ''}
-                  >Demos</a>
+                    onClick={e => this.handleClickExpandableMenuItem('demos-classification', e)}
+                    className={this.state.activeSubMenu === 'demos-classification' ? 'expanded' : ''}
+                  >Classification demos</a>
                 </li>
                 <li>
                   <a href="/jsmlt/docs" target="_blank">Documentation</a>
@@ -70,12 +74,12 @@ class Header extends Component {
           <div className="secondary">
             <div className="main-content">
               <nav className="navbar">
-                {this.state.activeSubMenu === 'demos' &&
+                {this.state.activeSubMenu === 'demos-classification' &&
                   <ul>
-                    <li><NavLink to="/demos/svm" activeClassName="active">SVM</NavLink></li>
-                    <li><NavLink to="/demos/perceptron" activeClassName="active">Perceptron</NavLink></li>
-                    <li><NavLink to="/demos/knn" activeClassName="active">KNN</NavLink></li>
-                    <li><NavLink to="/demos/logistic-regression" activeClassName="active">Logistic Regression</NavLink></li>
+                    <li><NavLink to="/demos/classification/svm" activeClassName="active">SVM</NavLink></li>
+                    <li><NavLink to="/demos/classification/perceptron" activeClassName="active">Perceptron</NavLink></li>
+                    <li><NavLink to="/demos/classification/knn" activeClassName="active">KNN</NavLink></li>
+                    <li><NavLink to="/demos/classification/logistic-regression" activeClassName="active">Logistic Regression</NavLink></li>
                   </ul>
                 }
               </nav>

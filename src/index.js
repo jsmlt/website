@@ -27,10 +27,10 @@ ReactDOM.render(
     <HashRouter>
       <App>
         <Route exact path="/" component={PageHome} />
-        <Route exact path="/demos/svm" component={PageSVM} />
-        <Route exact path="/demos/knn" component={PageKNN} />
-        <Route exact path="/demos/logistic-regression" component={PageLogisticRegression} />
-        <Route exact path="/demos/perceptron" component={PagePerceptron} />
+        <Route exact path="/demos/classification/svm" component={PageSVM} />
+        <Route exact path="/demos/classification/knn" component={PageKNN} />
+        <Route exact path="/demos/classification/logistic-regression" component={PageLogisticRegression} />
+        <Route exact path="/demos/classification/perceptron" component={PagePerceptron} />
       </App>
     </HashRouter>
   </Provider>,
