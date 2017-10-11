@@ -2,17 +2,17 @@
 import { Component } from 'react';
 
 // Local imports
-import Header from '../../../modules/header';
-import Classifier from '../../../modules/classifier';
+import Header from '../../../../modules/header';
+import Classifier from '../../../../modules/classifier';
 
-class SVM extends Component {
+class Perceptron extends Component {
   render() {
     return (
       <div id="page" className="with-canvas">
         <Header />
         <div id="main">
           <Classifier
-            classifierType="SVM"
+            classifierType="Perceptron"
             className="section nopadding with-sidebar"
             controlsClassName="sidebar"
             classifierClassName="main"
@@ -23,4 +23,4 @@ class SVM extends Component {
   }
 }
 
-export default SVM;
+export default Perceptron;

@@ -11,10 +11,10 @@ import App from './app';
 
 // Pages
 import PageHome from './pages/home';
-import PageSVM from './pages/demos/svm';
-import PageKNN from './pages/demos/knn';
-import PageLogisticRegression from './pages/demos/logistic-regression';
-import PagePerceptron from './pages/demos/perceptron';
+import PageSVM from './pages/demos/classification/svm';
+import PageKNN from './pages/demos/classification/knn';
+import PageLogisticRegression from './pages/demos/classification/logistic-regression';
+import PagePerceptron from './pages/demos/classification/perceptron';
 
 // Styles
 import './style/index.scss';
