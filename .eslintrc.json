@@ -18,17 +18,8 @@
     "no-constant-condition": "off",
     "class-methods-use-this": "off",
     "no-unused-vars": "off",
-    "dot-notation": "off",
     "prefer-destructuring": "off",
-    "object-curly-newline": "off"
-  },
-  "globals": {
-    "WPI": true,
-    "wpApiSettings": true
-  },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "function-paren-newline": "off",
+    "no-loop-func": "off"
   }
 }
