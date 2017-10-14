@@ -51,6 +51,13 @@ class Header extends Component {
                   >Classification demos</a>
                 </li>
                 <li>
+                  <a
+                    href="#"
+                    onClick={e => this.handleClickExpandableMenuItem('demos-clustering', e)}
+                    className={this.state.activeSubMenu === 'demos-clustering' ? 'expanded' : ''}
+                  >Clustering demos</a>
+                </li>
+                <li>
                   <a href="/jsmlt/docs" target="_blank">Documentation</a>
                 </li>
               </ul>
@@ -80,6 +87,11 @@ class Header extends Component {
                     <li><NavLink to="/demos/classification/perceptron" activeClassName="active">Perceptron</NavLink></li>
                     <li><NavLink to="/demos/classification/knn" activeClassName="active">KNN</NavLink></li>
                     <li><NavLink to="/demos/classification/logistic-regression" activeClassName="active">Logistic Regression</NavLink></li>
+                  </ul>
+                }
+                {this.state.activeSubMenu === 'demos-clustering' &&
+                  <ul>
+                    <li><NavLink to="/demos/clustering/k-means" activeClassName="active">k-means</NavLink></li>
                   </ul>
                 }
               </nav>
