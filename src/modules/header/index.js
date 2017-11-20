@@ -83,10 +83,11 @@ class Header extends Component {
               <nav className="navbar">
                 {this.state.activeSubMenu === 'demos-classification' &&
                   <ul>
-                    <li><NavLink to="/demos/classification/svm" activeClassName="active">SVM</NavLink></li>
-                    <li><NavLink to="/demos/classification/perceptron" activeClassName="active">Perceptron</NavLink></li>
+                    <li><NavLink to="/demos/classification/decision-tree" activeClassName="active">Decision Tree</NavLink></li>
                     <li><NavLink to="/demos/classification/knn" activeClassName="active">KNN</NavLink></li>
                     <li><NavLink to="/demos/classification/logistic-regression" activeClassName="active">Logistic Regression</NavLink></li>
+                    <li><NavLink to="/demos/classification/perceptron" activeClassName="active">Perceptron</NavLink></li>
+                    <li><NavLink to="/demos/classification/svm" activeClassName="active">SVM</NavLink></li>
                   </ul>
                 }
                 {this.state.activeSubMenu === 'demos-clustering' &&

@@ -58,7 +58,7 @@ class Canvas extends Component {
     const clusterer = Clusterers[this.props.clustererType]
       .getClusterer(this.props.clustererControls);
 
-    if (dataset.numDatapoints > 1) {
+    if (dataset.numDatapoints >= this.props.clustererControls.numClusters) {
       const X = dataset.getFeaturesArray();
 
       clusterer.train(X);
@@ -66,6 +66,8 @@ class Canvas extends Component {
       const assignments = clusterer.cluster(X);
 
       assignments.forEach((x, i) => dataset.datapoints[i].setClassIndex(x));
+    } else {
+      dataset.datapoints.forEach(x => x.setClassIndex(null));
     }
   }
 

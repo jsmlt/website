@@ -11,10 +11,11 @@ import App from './app';
 
 // Pages
 import PageHome from './pages/home';
-import PageSVM from './pages/demos/classification/svm';
+import PageDecisionTree from './pages/demos/classification/decision-tree';
 import PageKNN from './pages/demos/classification/knn';
 import PageLogisticRegression from './pages/demos/classification/logistic-regression';
 import PagePerceptron from './pages/demos/classification/perceptron';
+import PageSVM from './pages/demos/classification/svm';
 import PageKMeans from './pages/demos/clustering/k-means';
 
 // Styles
@@ -28,10 +29,11 @@ ReactDOM.render(
     <HashRouter>
       <App>
         <Route exact path="/" component={PageHome} />
-        <Route exact path="/demos/classification/svm" component={PageSVM} />
-        <Route exact path="/demos/classification/knn" component={PageKNN} />
+        <Route exact path="/demos/classification/decision-tree" component={PageDecisionTree} />
         <Route exact path="/demos/classification/logistic-regression" component={PageLogisticRegression} />
+        <Route exact path="/demos/classification/knn" component={PageKNN} />
         <Route exact path="/demos/classification/perceptron" component={PagePerceptron} />
+        <Route exact path="/demos/classification/svm" component={PageSVM} />
         <Route exact path="/demos/clustering/k-means" component={PageKMeans} />
       </App>
     </HashRouter>

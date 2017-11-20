@@ -10,7 +10,7 @@
       }
     }
     > .main { flex: 1 0 auto; position: relative;
-      canvas { position: absolute; }
+      canvas { position: absolute; user-select: none; }
     }
   }
 

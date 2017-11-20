@@ -51,10 +51,12 @@ class Canvas extends Component {
         this.canvasClassify(this.canvas, this.dataset);
       }
 
-      this.setState(prevState => ({
-        ...prevState,
-        showOverlay: false,
-      }));
+      if (this.state.showOverlay) {
+        this.setState(prevState => ({
+          ...prevState,
+          showOverlay: false,
+        }));
+      }
     });
   }
 
@@ -70,6 +72,10 @@ class Canvas extends Component {
       const y = encoder.encode(labels);
 
       classifier.train(X, y);
+
+      const yPred = classifier.predict(X);
+      const score = jsmlt.Validation.Metrics.accuracy(y, yPred);
+      console.log(`Accuracy: ${score}`);
 
       if (this.props.classifierType === 'binarysvm') {
         dataset.getDataPoints().forEach((x, i) => {
