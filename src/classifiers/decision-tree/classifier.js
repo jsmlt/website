@@ -3,5 +3,5 @@ import jsmlt from '@jsmlt/jsmlt';
 
 export default controls => (new jsmlt.Supervised.DecisionTree.DecisionTree({
   criterion: controls.splittingCriterion,
-  numFeatures: 2.0,
+  numFeatures: 1.0,
 }));
