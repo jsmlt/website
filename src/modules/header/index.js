@@ -84,6 +84,7 @@ class Header extends Component {
                 {this.state.activeSubMenu === 'demos-classification' &&
                   <ul>
                     <li><NavLink to="/demos/classification/decision-tree" activeClassName="active">Decision Tree</NavLink></li>
+                    <li><NavLink to="/demos/classification/random-forest" activeClassName="active">Random Forest</NavLink></li>
                     <li><NavLink to="/demos/classification/knn" activeClassName="active">KNN</NavLink></li>
                     <li><NavLink to="/demos/classification/logistic-regression" activeClassName="active">Logistic Regression</NavLink></li>
                     <li><NavLink to="/demos/classification/perceptron" activeClassName="active">Perceptron</NavLink></li>

@@ -15,6 +15,7 @@ import PageDecisionTree from './pages/demos/classification/decision-tree';
 import PageKNN from './pages/demos/classification/knn';
 import PageLogisticRegression from './pages/demos/classification/logistic-regression';
 import PagePerceptron from './pages/demos/classification/perceptron';
+import PageRandomForest from './pages/demos/classification/random-forest';
 import PageSVM from './pages/demos/classification/svm';
 import PageKMeans from './pages/demos/clustering/k-means';
 
@@ -30,6 +31,7 @@ ReactDOM.render(
       <App>
         <Route exact path="/" component={PageHome} />
         <Route exact path="/demos/classification/decision-tree" component={PageDecisionTree} />
+        <Route exact path="/demos/classification/random-forest" component={PageRandomForest} />
         <Route exact path="/demos/classification/logistic-regression" component={PageLogisticRegression} />
         <Route exact path="/demos/classification/knn" component={PageKNN} />
         <Route exact path="/demos/classification/perceptron" component={PagePerceptron} />
