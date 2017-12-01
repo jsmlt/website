@@ -13,8 +13,8 @@
 
   .iconized svg { margin-top: -4px; }
 
-  .primary { height: 48px; line-height: 48px; vertical-align: middle; }
-  .secondary { height: 48px; border-top: 1px solid #eaeaea; line-height: 48px; vertical-align: middle; background: #fafafa; }
+  .primary { min-height: 48px; line-height: 48px; vertical-align: middle; }
+  .secondary { min-height: 48px; border-top: 1px solid #eaeaea; line-height: 48px; vertical-align: middle; background: #fafafa; }
   
   .left { float: left; }
   .right { float: right; }
