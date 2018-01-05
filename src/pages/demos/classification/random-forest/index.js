@@ -14,7 +14,8 @@ class RandomForest extends Component {
           <Classifier
             classifierType="RandomForest"
             className="section nopadding with-sidebar"
-            controlsClassName="sidebar"
+            runControlsClassName="sidebar left"
+            controlsClassName="sidebar right"
             classifierClassName="main"
           />
         </div>

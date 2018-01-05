@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import Classifiers from '../../classifiers';
 import Canvas from './canvas';
 import Controls from './controls';
+import RunControls from './run-controls';
 
 export default class Classifier extends Component {
   constructor(props) {
@@ -53,6 +54,13 @@ export default class Classifier extends Component {
   render() {
     return (
       <div className={this.props.className}>
+        <div className={this.props.runControlsClassName}>
+          <RunControls
+            autorunEnabled={this.state.autorunEnabled}
+            onChangeAutorunEnabled={x => this.handleChangeAutorunEnabled(x)}
+            onClickRun={() => this.handleClickRun()}
+          />
+        </div>
         <div className={this.props.classifierClassName}>
           <Canvas
             autorunEnabled={this.state.autorunEnabled}
@@ -64,14 +72,11 @@ export default class Classifier extends Component {
         </div>
         <div className={this.props.controlsClassName}>
           <Controls
-            autorunEnabled={this.state.autorunEnabled}
             classifierControls={this.state.classifierControls}
             classifierType={this.props.classifierType}
             classIndex={this.state.classIndex}
-            onChangeAutorunEnabled={x => this.handleChangeAutorunEnabled(x)}
             onChangeClassifierControls={x => this.handleChangeClassifierControls(x)}
             onChangeClassIndex={x => this.handleChangeClassIndex(x)}
-            onClickRun={() => this.handleClickRun()}
           />
         </div>
       </div>

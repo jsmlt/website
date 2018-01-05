@@ -4,9 +4,7 @@ import Classifiers from '../../../classifiers';
 const Controls = ({
   classifierType,
   classIndex, onChangeClassIndex,
-  autorunEnabled, onChangeAutorunEnabled,
   classifierControls, onChangeClassifierControls,
-  onClickRun,
 }) => {
   const ClassifierControls = (Classifiers[classifierType] && Classifiers[classifierType].Controls)
     ? Classifiers[classifierType].Controls : null;
@@ -35,27 +33,6 @@ const Controls = ({
           </div>
         }
       </div>
-      <footer>
-        <fieldset>
-          <button
-            onClick={onClickRun}
-          >
-            Run
-          </button>
-          <div className="optional">
-            <label htmlFor="enable-autorun">
-              <input
-                checked={autorunEnabled}
-                id="enable-autorun"
-                type="checkbox"
-                value="1"
-                onChange={e => onChangeAutorunEnabled(e.target.checked)}
-              />
-              Enable autorun
-            </label>
-          </div>
-        </fieldset>
-      </footer>
     </div>
   );
 };

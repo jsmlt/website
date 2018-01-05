@@ -3,7 +3,9 @@
   &.nopadding { padding: 0; }
   
   &.with-sidebar { display: flex;
-    > .sidebar { flex: 0 0 auto; border-left: 1px solid #ccc; box-sizing: border-box; min-width: 240px;
+    > .sidebar { flex: 0 0 auto; box-sizing: border-box; min-width: 240px; border-color: #ccc; border-style: solid;
+      &.right { border-width: 0 0 0 1px; }
+      &.left { border-width: 0 1px 0 0; }
       > div { display: flex; flex-direction: column; min-height: 100%;
         > .content { flex: 1 0 auto; }
         > footer { border-top: 1px solid #ddd; }
@@ -16,6 +18,10 @@
 
   @media all and (max-width: 768px) {
     &.with-sidebar { flex-direction: column;
+      > .sidebar {
+        &.right { border-width: 1px 0 0 0; }
+        &.left { border-width: 0 0 1px 0; }
+      }
       > .main { min-height: 70vw; }
     }
   }

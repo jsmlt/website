@@ -14,7 +14,8 @@ class DecisionTree extends Component {
           <Classifier
             classifierType="DecisionTree"
             className="section nopadding with-sidebar"
-            controlsClassName="sidebar"
+            runControlsClassName="sidebar left"
+            controlsClassName="sidebar right"
             classifierClassName="main"
           />
         </div>

@@ -14,7 +14,8 @@ class KNN extends Component {
           <Classifier
             classifierType="KNN"
             className="section nopadding with-sidebar"
-            controlsClassName="sidebar"
+            runControlsClassName="sidebar left"
+            controlsClassName="sidebar right"
             classifierClassName="main"
           />
         </div>

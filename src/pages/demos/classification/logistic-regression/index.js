@@ -14,7 +14,8 @@ class LogisticRegression extends Component {
           <Classifier
             classifierType="LogisticRegression"
             className="section nopadding with-sidebar"
-            controlsClassName="sidebar"
+            runControlsClassName="sidebar left"
+            controlsClassName="sidebar right"
             classifierClassName="main"
           />
         </div>

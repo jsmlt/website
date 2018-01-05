@@ -14,7 +14,8 @@ class Perceptron extends Component {
           <Classifier
             classifierType="Perceptron"
             className="section nopadding with-sidebar"
-            controlsClassName="sidebar"
+            runControlsClassName="sidebar left"
+            controlsClassName="sidebar right"
             classifierClassName="main"
           />
         </div>
