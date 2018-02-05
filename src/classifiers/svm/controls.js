@@ -193,6 +193,7 @@ export default class Controls extends Component {
             <option value="linear">Linear</option>
             <option value="gaussian">Gaussian</option>
             <option value="polynomial">Polynomial</option>
+            <option value="sigmoid">Sigmoid</option>
           </select>
         </fieldset>
         <ControlsC
@@ -211,6 +212,18 @@ export default class Controls extends Component {
               degree={this.props.degree}
               onChange={x => this.handleChangeDegree(x)}
             />
+            <ControlsGamma
+              gamma={this.props.gamma}
+              onChange={x => this.handleChangeGamma(x)}
+            />
+            <ControlsCoef0
+              coef0={this.props.coef0}
+              onChange={x => this.handleChangeCoef0(x)}
+            />
+          </div>
+        }
+        {kernel === 'sigmoid' &&
+          <div>
             <ControlsGamma
               gamma={this.props.gamma}
               onChange={x => this.handleChangeGamma(x)}

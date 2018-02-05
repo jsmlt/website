@@ -10,6 +10,11 @@ export const getKernel = (controls) => {
       gamma: controls.gamma,
       coef0: controls.coef0,
     });
+  } else if (controls.kernel === 'sigmoid') {
+    return new jsmlt.Kernel.Sigmoid({
+      gamma: controls.gamma,
+      coef0: controls.coef0,
+    });
   }
 
   return new jsmlt.Kernel.Linear();
