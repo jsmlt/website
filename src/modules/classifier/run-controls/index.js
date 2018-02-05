@@ -24,21 +24,6 @@ const RunControls = ({
             </label>
           </div>
         </fieldset>
-        <fieldset>
-          <h3>Step-by-step</h3>
-          <button>&lt;</button>
-          <button>||</button>
-          <button>&gt;</button>
-          <div>
-            <button>Run</button> with
-            <select>
-              <option>1 step p/s</option>
-              <option>2 step p/s</option>
-              <option>5 step p/s</option>
-              <option>10 step p/s</option>
-            </select>
-          </div>
-        </fieldset>
       </div>
     </div>
   );
