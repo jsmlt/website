@@ -2,6 +2,9 @@
 import { Component } from 'react';
 import Slider from 'rc-slider';
 
+// Local imports
+import { ControlsMaxDepthAll } from '../decision-tree/controls';
+
 // Styles
 import 'rc-slider/assets/index.css';
 
@@ -10,8 +13,10 @@ const SliderWithTooltip = Slider.createSliderWithTooltip(Slider);
 
 // Default controls
 export const getDefaultControls = () => ({
-  splittingCriterion: 'gini',
   numTrees: 10,
+  splittingCriterion: 'gini',
+  maxDepthEnabled: false,
+  maxDepth: 2,
 });
 
 const ControlsNumTrees = ({ numTrees, onChange }) => {
@@ -40,17 +45,29 @@ const ControlsNumTrees = ({ numTrees, onChange }) => {
 };
 
 export default class Controls extends Component {
+  handleChangeNumTrees(numTrees) {
+    this.props.onChange({ numTrees });
+  }
+
   handleChangeSplittingCriterion(splittingCriterion) {
     this.props.onChange({ splittingCriterion });
   }
+  
+  handleChangeMaxDepth(maxDepth) {
+    this.props.onChange({ maxDepth });
+  }
 
-  handleChangeNumTrees(numTrees) {
-    this.props.onChange({ numTrees });
+  handleChangeMaxDepthEnabled(maxDepthEnabled) {
+    this.props.onChange({ maxDepthEnabled });
   }
 
   render() {
     return (
       <div>
+        <ControlsNumTrees
+          numTrees={this.props.numTrees}
+          onChange={x => this.handleChangeNumTrees(x)}
+        />
         <fieldset>
           <label>Splitting criterion</label>
           <select
@@ -61,9 +78,11 @@ export default class Controls extends Component {
             <option value="entropy">Information gain</option>
           </select>
         </fieldset>
-        <ControlsNumTrees
-          numTrees={this.props.numTrees}
-          onChange={x => this.handleChangeNumTrees(x)}
+        <ControlsMaxDepthAll
+          maxDepthEnabled={this.props.maxDepthEnabled}
+          maxDepth={this.props.maxDepth}
+          onChangeMaxDepthEnabled={x => this.handleChangeMaxDepthEnabled(x)}
+          onChangeMaxDepth={x => this.handleChangeMaxDepth(x)}
         />
       </div>
     );
