@@ -14,7 +14,7 @@ class KMeans extends Component {
           <Clusterer
             clustererType="KMeans"
             className="section nopadding with-sidebar"
-            controlsClassName="sidebar"
+            controlsClassName="sidebar right"
             clustererClassName="main"
           />
         </div>
