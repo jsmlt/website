@@ -49,7 +49,7 @@ console.log(clf.predict(test_X));`,
                 <div>
                   <Link
                     className="button big button-cta"
-                    to="/demos/svm"
+                    to="/demos/classification/svm"
                   >
                     Try the JSMLT interactive demo
                   </Link>
