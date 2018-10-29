@@ -63,51 +63,47 @@ class Canvas extends Component {
    * Run the canvas's classifier on the associated dataset.
    */
   classify() {
+    // Only run the classifier if there are at least 2 datapoints
+    if (this.dataset.numDatapoints <= 1) {
+      return;
+    }
+
+    // Extract features
+    const X = this.dataset.getFeaturesArray();
+
+    // Extract and encode labels
+    const labels = this.dataset.getLabelsArray();
+    const encoder = new jsmlt.Preprocessing.LabelEncoder();
+    const y = encoder.encode(labels);
+
     // Find the classifier implementation (i.e., the classification algorithm)
     const classifier = Classifiers[this.props.classifierType]
       .getClassifier(this.props.classifierControls);
 
-    // Only run the classifier if there are at least 2 datapoints
-    if (this.dataset.numDatapoints > 1) {
-      // Extract features
-      const X = this.dataset.getFeaturesArray();
+    // Train the classifier
+    classifier.train(X, y);
 
-      // Extract and encode labels
-      const labels = this.dataset.getLabelsArray();
-      const encoder = new jsmlt.Preprocessing.LabelEncoder();
-      const y = encoder.encode(labels);
-
-      // Train the classifier
-      classifier.train(X, y);
-
-      if (this.props.classifierType === 'SVM') {
-        this.dataset.datapoints.forEach(x => x.setMarked(false));
-        classifier.getSupportVectors().forEach(x => this.dataset.datapoints[x].setMarked(true));
-      }
-
-      /*if (this.props.classifierType === 'binarysvm') {
-        this.dataset.getDataPoints().forEach((x, i) => {
-          x.setMarked(classifier.supportVectors[i]);
-        });
-      }*/
-
-      // Generate predictions for grid
-      const boundaries = new jsmlt.Classification.Boundaries();
-      const classIndexBoundaries = boundaries.calculateClassifierDecisionBoundaries(
-        classifier,
-        51,
-        this.getBoundingBox()
-      );
-
-      // Convert boundary keys (class indices) to labels
-      const labelBoundaries = Object.keys(classIndexBoundaries).reduce((a, x) => ({
-        ...a,
-        [encoder.decode(x)]: classIndexBoundaries[x],
-      }), {});
-
-      // Store class boundaries in canvas
-      this.canvas.setClassBoundaries(labelBoundaries);
+    if (this.props.classifierType === 'SVM') {
+      this.dataset.datapoints.forEach(x => x.setMarked(false));
+      classifier.getSupportVectors().forEach(x => this.dataset.datapoints[x].setMarked(true));
     }
+
+    // Generate predictions for grid
+    const boundaries = new jsmlt.Classification.Boundaries();
+    const classIndexBoundaries = boundaries.calculateClassifierDecisionBoundaries(
+      classifier,
+      51,
+      this.getBoundingBox()
+    );
+
+    // Convert boundary keys (class indices) to labels
+    const labelBoundaries = Object.keys(classIndexBoundaries).reduce((a, x) => ({
+      ...a,
+      [encoder.decode(x)]: classIndexBoundaries[x],
+    }), {});
+
+    // Store class boundaries in canvas
+    this.canvas.setClassBoundaries(labelBoundaries);
   }
 
   shouldComponentUpdate(nextProps, nextState) {

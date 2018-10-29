@@ -41,8 +41,9 @@ const ControlsMaxDepth = ({ maxDepth, onChange }) => {
   );
 };
 
-export const ControlsMaxDepthAll = ({ maxDepthEnabled, maxDepth, onChangeMaxDepthEnabled,
-  onChangeMaxDepth}) => (
+export const ControlsMaxDepthAll = ({
+  maxDepthEnabled, maxDepth, onChangeMaxDepthEnabled, onChangeMaxDepth
+}) => (
   <fieldset>
     <label>
       <input

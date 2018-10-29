@@ -40,7 +40,7 @@ console.log(clf.predict(test_X));`,
               <div>
                 <h1>The Machine Learning Toolkit for JavaScript</h1>
                 <p>
-                  JSMLT. An open-source, easy-to-use machine learning library. Programmed entirely
+                  JSMLT. An open-source easy-to-use machine learning library. Programmed entirely
                   in JavaScript. We've got supervised learning, right inside your browser! And
                   what's even better: we've got interactive, 2-dimensional visualizations of all
                   classical machine learning algorithms, ready for use — why not take it for a spin

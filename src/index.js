@@ -11,13 +11,8 @@ import App from './app';
 
 // Pages
 import PageHome from './pages/home';
-import PageDecisionTree from './pages/demos/classification/decision-tree';
-import PageKNN from './pages/demos/classification/knn';
-import PageLogisticRegression from './pages/demos/classification/logistic-regression';
-import PagePerceptron from './pages/demos/classification/perceptron';
-import PageRandomForest from './pages/demos/classification/random-forest';
-import PageSVM from './pages/demos/classification/svm';
-import PageKMeans from './pages/demos/clustering/k-means';
+import PageClassifierDemo from './pages/demos/classification';
+import PageClustererDemo from './pages/demos/clustering';
 
 // Styles
 import './style/index.scss';
@@ -30,13 +25,14 @@ ReactDOM.render(
     <HashRouter>
       <App>
         <Route exact path="/" component={PageHome} />
-        <Route exact path="/demos/classification/decision-tree" component={PageDecisionTree} />
-        <Route exact path="/demos/classification/random-forest" component={PageRandomForest} />
-        <Route exact path="/demos/classification/logistic-regression" component={PageLogisticRegression} />
-        <Route exact path="/demos/classification/knn" component={PageKNN} />
-        <Route exact path="/demos/classification/perceptron" component={PagePerceptron} />
-        <Route exact path="/demos/classification/svm" component={PageSVM} />
-        <Route exact path="/demos/clustering/k-means" component={PageKMeans} />
+        <Route exact path="/demos/classification/decision-tree" render={props => <PageClassifierDemo classifier="DecisionTree" {...props} /> } />
+        <Route exact path="/demos/classification/knn" render={props => <PageClassifierDemo classifier="LogisticRegression" {...props} /> } />
+        <Route exact path="/demos/classification/logistic-regression" render={props => <PageClassifierDemo classifier="KNN" {...props} /> } />
+        <Route exact path="/demos/classification/neural-network" render={props => <PageClassifierDemo classifier="NeuralNetwork" {...props} /> } />
+        <Route exact path="/demos/classification/perceptron" render={props => <PageClassifierDemo classifier="Perceptron" {...props} /> } />
+        <Route exact path="/demos/classification/random-forest" render={props => <PageClassifierDemo classifier="RandomForest" {...props} /> } />
+        <Route exact path="/demos/classification/svm" render={props => <PageClassifierDemo classifier="SVM" {...props} /> } />
+        <Route exact path="/demos/clustering/k-means" render={props => <PageClustererDemo clusterer="KMeans" {...props} /> } />
       </App>
     </HashRouter>
   </Provider>,

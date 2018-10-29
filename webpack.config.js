@@ -1,7 +1,7 @@
 // Imports
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Folder paths
 const SRC_DIR = path.resolve(__dirname, 'src');
@@ -13,6 +13,7 @@ module.exports = {
   watchOptions: {
     poll: true
   },
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
@@ -25,7 +26,7 @@ module.exports = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?/,
         include: /src/,
@@ -35,22 +36,16 @@ module.exports = {
         ],
       },
       { 
-        test: /\.scss$/, 
-        loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader!sass-loader",
-        }),
-      },
-      { 
-        test: /\.css$/, 
-        loader: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader",
-        }),
+        test: /\.(scss|css)$/, 
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: {} },
+          { loader: "sass-loader", options: {} },
+        ]
       },
       {
         test: /\.(png|jpg|svg)$/,
-        loader: 'file-loader?name=/images/[name].[ext]',
+        use: 'file-loader?name=/images/[name].[ext]',
       }
     ],
   },
@@ -58,7 +53,7 @@ module.exports = {
     new webpack.ProvidePlugin({
         "React": "react",
     }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'bundle.css',
       allChunks: true
     })

@@ -52,7 +52,7 @@ export default class Controls extends Component {
   handleChangeSplittingCriterion(splittingCriterion) {
     this.props.onChange({ splittingCriterion });
   }
-  
+
   handleChangeMaxDepth(maxDepth) {
     this.props.onChange({ maxDepth });
   }

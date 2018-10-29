@@ -20,6 +20,7 @@
     "no-unused-vars": "off",
     "prefer-destructuring": "off",
     "function-paren-newline": "off",
-    "no-loop-func": "off"
+    "no-loop-func": "off",
+    "operator-linebreak": "off"
   }
 }

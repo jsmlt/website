@@ -1,6 +1,6 @@
 // Local imports
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { github } from 'react-syntax-highlighter/dist/styles';
+import { github } from 'react-syntax-highlighter/styles/hljs';
 
 export default (props) => {
   const customStyle = {

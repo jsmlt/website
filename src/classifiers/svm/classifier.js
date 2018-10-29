@@ -4,13 +4,17 @@ import jsmlt from '@jsmlt/jsmlt';
 export const getKernel = (controls) => {
   if (controls.kernel === 'gaussian') {
     return new jsmlt.Kernel.Gaussian(10 ** controls.sigmaSquared);
-  } else if (controls.kernel === 'polynomial') {
+  }
+
+  if (controls.kernel === 'polynomial') {
     return new jsmlt.Kernel.Polynomial({
       degree: controls.degree,
       gamma: controls.gamma,
       coef0: controls.coef0,
     });
-  } else if (controls.kernel === 'sigmoid') {
+  }
+
+  if (controls.kernel === 'sigmoid') {
     return new jsmlt.Kernel.Sigmoid({
       gamma: controls.gamma,
       coef0: controls.coef0,

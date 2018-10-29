@@ -2,7 +2,7 @@
 import { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Collapse } from 'react-collapse';
-import FaGithub from 'react-icons/lib/fa/github';
+import { FaGithub } from 'react-icons/fa';
 
 // Static assets
 import imageLogo from '../../static/images/logo.svg';
@@ -87,6 +87,7 @@ class Header extends Component {
                     <li><NavLink to="/demos/classification/random-forest" activeClassName="active">Random Forest</NavLink></li>
                     <li><NavLink to="/demos/classification/knn" activeClassName="active">KNN</NavLink></li>
                     <li><NavLink to="/demos/classification/logistic-regression" activeClassName="active">Logistic Regression</NavLink></li>
+                    <li><NavLink to="/demos/classification/neural-network" activeClassName="active">Neural Network</NavLink></li>
                     <li><NavLink to="/demos/classification/perceptron" activeClassName="active">Perceptron</NavLink></li>
                     <li><NavLink to="/demos/classification/svm" activeClassName="active">SVM</NavLink></li>
                   </ul>

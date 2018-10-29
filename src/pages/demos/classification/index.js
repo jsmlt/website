@@ -2,17 +2,17 @@
 import { Component } from 'react';
 
 // Local imports
-import Header from '../../../../modules/header';
-import Classifier from '../../../../modules/classifier';
+import Header from '../../../modules/header';
+import Classifier from '../../../modules/classifier';
 
-class RandomForest extends Component {
+class ClassifierDemo extends Component {
   render() {
     return (
       <div id="page" className="with-canvas">
         <Header />
         <div id="main">
           <Classifier
-            classifierType="RandomForest"
+            classifierType={this.props.classifier}
             className="section nopadding with-sidebar"
             runControlsClassName="sidebar left"
             controlsClassName="sidebar right"
@@ -24,4 +24,4 @@ class RandomForest extends Component {
   }
 }
 
-export default RandomForest;
+export default ClassifierDemo;
