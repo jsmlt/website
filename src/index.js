@@ -26,8 +26,8 @@ ReactDOM.render(
       <App>
         <Route exact path="/" component={PageHome} />
         <Route exact path="/demos/classification/decision-tree" render={props => <PageClassifierDemo classifier="DecisionTree" {...props} /> } />
-        <Route exact path="/demos/classification/knn" render={props => <PageClassifierDemo classifier="LogisticRegression" {...props} /> } />
-        <Route exact path="/demos/classification/logistic-regression" render={props => <PageClassifierDemo classifier="KNN" {...props} /> } />
+        <Route exact path="/demos/classification/knn" render={props => <PageClassifierDemo classifier="KNN" {...props} /> } />
+        <Route exact path="/demos/classification/logistic-regression" render={props => <PageClassifierDemo classifier="LogisticRegression" {...props} /> } />
         <Route exact path="/demos/classification/neural-network" render={props => <PageClassifierDemo classifier="NeuralNetwork" {...props} /> } />
         <Route exact path="/demos/classification/perceptron" render={props => <PageClassifierDemo classifier="Perceptron" {...props} /> } />
         <Route exact path="/demos/classification/random-forest" render={props => <PageClassifierDemo classifier="RandomForest" {...props} /> } />
