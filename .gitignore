@@ -7,6 +7,9 @@ build
 app
 jsmlt
 
+# OSX files
+.DS_Store
+
 ### Standard
 
 # Logs
