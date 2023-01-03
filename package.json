@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/jsmlt/website#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.20.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
@@ -43,7 +43,7 @@
     "write-file-webpack-plugin": "^4.3.2"
   },
   "dependencies": {
-    "@jsmlt/jsmlt": "^0.1.15",
+    "@jsmlt/jsmlt": "^0.1.18",
     "babel-plugin-transform-react-jsx-img-import": "^0.1.4",
     "file-loader": "^2.0.0",
     "rc-slider": "^8.6.1",
